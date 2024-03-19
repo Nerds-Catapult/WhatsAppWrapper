@@ -1,4 +1,4 @@
-package Whatsapp
+package whatsAppCloud_go
 
 type Client struct {
 	token string

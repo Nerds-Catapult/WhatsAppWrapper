@@ -1,1 +1,4 @@
-package sendmessages
+package main
+
+func main() {
+}
