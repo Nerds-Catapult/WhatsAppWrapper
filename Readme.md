@@ -57,10 +57,33 @@ func main() {
     }
 }
 ```
+## Configuration
 
-## Documentation
+Before you can start using the WhatsAppCloud-go library, you need to obtain an Access Token, Phone number ID, and Business ID. These credentials are essential for authenticating and interacting with the WhatsApp Cloud API.
 
-For detailed documentation, visit [WhatsApp Cloud API Documentation](^4^).
+### Register as a Meta Developer
+
+To get started, you'll need to register as a Meta Developer:
+
+1. Visit the Meta Developer Registration page and follow the instructions to register.
+2. Once registered, create an application by following the guide on Creating an App.
+3. Configure your application to enable access to the WhatsApp Business Cloud API.
+
+### Manage Your Applications
+
+You can manage your applications and their settings at the Facebook App Dashboard.
+
+### Testing Your Setup
+
+It's a good idea to test your setup before integrating the API into your application:
+
+1. Go to the WhatsApp Developer Dashboard.
+2. Use the provided interface to send a test message to your phone number.
+3. Ensure that you receive the test message, confirming that your setup is correct.
+
+By completing these steps, you'll be ready to use the WhatsAppCloud-go library in your Golang applications.
+
+
 
 ## Contributing
 
