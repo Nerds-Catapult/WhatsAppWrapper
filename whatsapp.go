@@ -1,30 +1,18 @@
-package whatsapp
+package whatsAppCloud_go
+
+import "context"
 
 type Endpoint interface {
-	SendMessage(messageType string, content interface{}) error
-	ReceiveMessage() (Message, error)
-	ManageMedia(mediaType string, action string, media interface{}) error
-	SetupWebhook(url string) error
-	Authenticate(credentials AuthCredentials) error
-	HandleError(err error) error
-	RespectRateLimit() error
-	RetrieveAnalytics(metrics string) (Analytics, error)
-}
+	Authenticate(ctx context.Context, credentials AuthCredentials) error
+	LoginWithQRCode(ctx context.Context) error
+	LoginWithSessionCredentials(ctx context.Context, sessionCredentials ...string) error
 
-// Message struct to represent a generic message.
-//type Message struct {
-//	ID      string
-//	Content interface{}
-//}
-//
-//// AuthCredentials struct to hold authentication details.
-//type AuthCredentials struct {
-//	ClientID     string
-//	ClientSecret string
-//	Token        string
-//}
-//
-//// Analytics struct to represent conversation analytics.
-//type Analytics struct {
-//	Metrics map[string]interface{}
-//}
+	SendMessage(ctx context.Context, messageType string, content interface{}) error
+	ReceiveMessage(ctx context.Context) (Message, error)
+	ManageMedia(ctx context.Context, mediaType string, action string, media interface{}) error
+	SetupWebhook(ctx context.Context, url string) error
+	HandleError(ctx context.Context, err error) error
+	RespectRateLimit(ctx context.Context) error
+	RetrieveAnalytics(ctx context.Context, metrics string) (Analytics, error)
+	AddReceivers(ctx context.Context, contacts ...string) error
+}
